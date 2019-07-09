@@ -3,3 +3,4 @@ TO DO:
 2. generate relevant error alert
 3. add email notification functionality
 4. Add functionality for other sites such as avast, 
+5. Use eval and str to convert byte object to list
