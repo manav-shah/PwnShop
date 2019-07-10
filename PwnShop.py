@@ -16,8 +16,8 @@ except requests.HTTPError as exception:
     print(f'The following error was encountered: {exception} \n')
 
 #store breach data in a file for future lookup
-with open('tempfile.txt','wb') as tempfile:
-    tempfile.write(res.content)
+#with open('tempfile.txt','wb') as tempfile:
+#    tempfile.write(res.content)
     
 
 
