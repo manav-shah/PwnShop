@@ -36,11 +36,16 @@ def pwncheck(account):
     message = ''.join(message)
     return message
 
-if __name__ == '__main__':
+def main():
     account='shahmanav789@gmail.com'
     message=pwncheck(account)
     print(message)
 
-    #store breach data in a file for future lookup
-    #with open('tempfile.txt','wb') as tempfile:
-    #tempfile.write(res.content)
+if __name__ == '__main__':
+    main()
+
+
+
+#store breach data in a file for future lookup
+#with open('tempfile.txt','wb') as tempfile:
+#tempfile.write(res.content)
