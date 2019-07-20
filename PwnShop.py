@@ -3,9 +3,6 @@ import pandas as pd
 #account='shahmanav789@gmail.com'
 #account='somefakeemail_v2@gmail.com'
 
-def sort_by_add_date(data):
-    
-
 def pwncheck(account):
     url = f'https://haveibeenpwned.com/api/v2/breachedaccount/{account}'
     res=requests.get(url)
@@ -27,7 +24,6 @@ def pwncheck(account):
             message = [f'Sorry, there was an error. The following error was encountered: {exception} \n']
 
     if isbreached:
-        # TODO: Implement sorting in pure python, so pandas is not a requirement
         #Convert breachdata from list of dicts to dataframe, so it is easier to sort by added date.
         df = pd.DataFrame(breachdata).sort_values(by='AddedDate',ascending=False)
         domains = [i for i in df['Domain']]
@@ -39,16 +35,12 @@ def pwncheck(account):
     message = ''.join(message)
     return message
 
+
 def main():
     account='shahmanav789@gmail.com'
     message=pwncheck(account)
     print(message)
 
+
 if __name__ == '__main__':
     main()
-
-
-
-#store breach data in a file for future lookup
-#with open('tempfile.txt','wb') as tempfile:
-#tempfile.write(res.content)
