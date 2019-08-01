@@ -1,5 +1,7 @@
 import requests
+import sys
 import pandas as pd
+from emailFunc import sendmail
 #account='shahmanav789@gmail.com'
 #account='somefakeemail_v2@gmail.com'
 
@@ -37,10 +39,9 @@ def pwncheck(account):
 
 
 def main():
-    account='shahmanav789@gmail.com'
+    account=sys.argv[0]
     message=pwncheck(account)
-    print(message)
-
-
+    sendmail(account,message)
+    
 if __name__ == '__main__':
     main()
